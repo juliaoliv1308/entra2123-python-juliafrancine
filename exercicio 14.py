@@ -1,5 +1,6 @@
-nome = "Eustaquio"
-if nome:
-    print("nome existe ou é nao vazio")
-else:
-    print("nao existe")
+for i in range (10):
+    print(i)
+
+    lista_de_nomes_ = ["jura", "francis"]
+    for i in lista_de_nomes_:
+        print(i)
