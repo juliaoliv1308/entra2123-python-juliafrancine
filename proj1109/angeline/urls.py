@@ -2,6 +2,7 @@
 from django.contrib import admin
 from django.urls import path 
 from angeline.views import index, ex002, contato
+app_name = 'angeline'
 
 urlpatterns ={
     path('', index, name='index'),
