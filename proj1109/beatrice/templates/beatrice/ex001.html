@@ -1,0 +1,16 @@
+{% extends "angeline/base.html" %}
+{% block content %}
+
+<h1> {{ titulo }} </h1>
+<p>{{ passo }}</p>
+<p> O metodo que veio foi um tipo  {{ metodo }}</p>
+<p> O seu endereco ip é {{ ip_address }}</p>
+
+<h2>exx01</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar</button>
+</form>
+
+{% endblock %}
