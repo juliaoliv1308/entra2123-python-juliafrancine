@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('angeline.urls')),
     path('beatrice/', include('beatrice.urls')),
-    
-
+     path('ex001/', ex001, name='ex001'),
 ]
+
