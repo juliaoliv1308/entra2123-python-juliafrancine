@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from angeline.forms import ContatoForm
+from angeline.forms import ContatoForm, Ex003Form
 
 
 def index(request):
@@ -25,6 +25,7 @@ def contato(request):
         form = ContatoForm(request.POST)
         if form.is_valid():
             assunto = form.cleaned_data['assunto']
+            assunto = qualquer(assunto)  
             texto = form.cleaned_data['texto']
             email = form.cleaned_data['email']
             idade = int(form.cleaned_data['idade'])
@@ -33,7 +34,14 @@ def contato(request):
 
     else:
         metodo = "*GET*"
-        form = ContatoForm()
+          # Inicializando o formulário com valores padrão
+        initial_data = {
+            'assunto': 'Tópico Padrão',
+            'texto': 'Texto Padrão',
+            'email': 'email@exemplo.com',
+            'idade': 30,
+        }
+        form = ContatoForm(initial=initial_data)
 
     context = { 
         'titulo' : 'historia do passos',
@@ -44,3 +52,24 @@ def contato(request):
     }
     
     return render(request, 'angeline/contato.html', context)
+
+def ex003(request):
+    if request.method == 'POST':
+        form = Ex003Form(request.POST)
+        if form.is_valid():
+            resposta = form.cleaned_data['resposta']
+            if resposta == 'A':  # 'A' significa Paris, que é a resposta correta
+                msg = "Parabéns, você acertou!"
+            else:
+                msg = "Ops, tente novamente."
+    else:   
+        form = Ex003Form(initial={'pergunta': 'Qual é a capital da França?'})
+        msg = ""
+
+    context = { 
+        'titulo' : 'historia do passos',
+        'resposta': "",
+        'form' : form,
+    }    
+
+    return render(request, 'angeline/ex003.html', context)

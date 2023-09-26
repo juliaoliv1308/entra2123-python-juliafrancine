@@ -7,3 +7,15 @@ class ContatoForm(forms.Form):
     idade = forms.IntegerField(label='Idadexxx', required=True)
     salario = forms.DecimalField(label='Salarioxxx', required=False)    
     enviar = forms.BooleanField(label='Enviarxx', required=False)
+    
+
+class Ex003Form(forms.Form):
+    PERGUNTA_CHOICES = [
+        ('A', 'Paris'),
+        ('B', 'Brasília'),
+        ('C', 'Estocolmo'),
+        ('D', 'Nova York'),
+    ]
+
+    pergunta = forms.CharField(disabled=True, label="Pergunta")
+    resposta = forms.ChoiceField(choices=PERGUNTA_CHOICES, label="Resposta")
