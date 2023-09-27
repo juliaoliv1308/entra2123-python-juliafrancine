@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path 
-from angeline.views import index, ex002, contato, ex003
+from angeline.views import index, ex002, contato, ex003, ex004
 app_name = 'angeline'
 
 urlpatterns ={
@@ -9,5 +9,5 @@ urlpatterns ={
     path('ex002', ex002, name='ex002'),
     path('contato', contato, name='contato'),
     path('ex003', ex003, name='ex003'),
-    
+    path('ex004', ex004, name='ex004'),
 }

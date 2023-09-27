@@ -1,0 +1,18 @@
+
+<!-- template.html -->
+{% for key, value in questions.items %}
+    <h3>{{ key }}</h3>
+    <p>
+        <strong>Q:</strong> {{ value.Q }}
+
+        <strong>A:</strong> {{ value.A }}
+
+        <strong>B:</strong> {{ value.B }}
+
+        <strong>C:</strong> {{ value.C }}
+
+        <strong>D:</strong> {{ value.D }}
+
+        <strong>R:</strong> {{ value.R }}
+    </p>
+{% endfor %}
