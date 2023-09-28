@@ -1,0 +1,16 @@
+{% for key, value in produtos.items %}
+    <h3>{{ key }}</h3>
+    <p>
+        <strong>nome:</strong> {{ value.nome }}
+
+        <strong>fornecedores:</strong> {{ value.fornecedores }}
+
+        <strong>categoria:</strong> {{ value.categoria }}
+
+        <strong>produtos:</strong> {{ value.produtos }}
+
+        <strong>localização:</strong> {{ value.localização }}
+
+        <strong>saldo:</strong> {{ value.saldo }}
+    </p>
+{% endfor %}
