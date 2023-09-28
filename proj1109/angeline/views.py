@@ -217,23 +217,23 @@ def ex005(request):
     supermercado = {}
     for produto_id, produto_info in produtos.items():
         fornecedor_id = produto_info['fornecedor_id']
-    categoria_id = produto_info['categoria_id']
-    
-    
-    print()
-    fornecedor_info = fornecedores.get(fornecedor_id, {})
-    categoria_info = categorias.get(categoria_id, {})
-    print("x"*40)
-    print(fornecedor_info)
-    print(categoria_info)
-    supermercado[produto_id] = {
-        'nome': produto_info['nome'],
-        'fornecedor': fornecedor_info['nome'],
-        'categoria':  categoria_info['nome'],
-    }
+        categoria_id = produto_info['categoria_id']
+        
+        
+        print()
+        fornecedor_info = fornecedores.get(fornecedor_id, {})
+        categoria_info = categorias.get(categoria_id, {})
+        print("x"*40)
+        print(fornecedor_info)
+        print(categoria_info)
+        supermercado[produto_id] = {
+            'nome': produto_info['nome'],
+            'fornecedor': fornecedor_info['nome'],
+            'categoria':  categoria_info['nome'],
+        }
 
     print(supermercado)  
     context = {
-        'produtos': produtos
-    }
+        'supermercado': supermercado
+    }       
     return render(request, 'angeline/ex005.html', context)
