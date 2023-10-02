@@ -139,35 +139,35 @@ def ex005(request):
         'fornecedor_id': 1,
         'categoria_id': 1,
         'localizacao': 'Prateleira A1',
-        'saldo': 50
+        'saldo_id': 1
     },
     2: {
         'nome': 'Televisão',
         'fornecedor_id': 2,
         'categoria_id': 2,
         'localizacao': 'Setor Eletrônicos',
-        'saldo': 10
+        'saldo_id': 2
     },
     3: {
         'nome': 'Macarrão',
         'fornecedor_id': 1,
         'categoria_id': 1,
         'localizacao': 'Prateleira B2',
-        'saldo': 30
+        'saldo_id': 3
     },
     4: {
         'nome': 'Smartphone',
         'fornecedor_id': 2,
         'categoria_id': 2,
         'localizacao': 'Setor Eletrônicos',
-        'saldo': 15
+        'saldo_id': 4
     },
     5: {
         'nome': 'Leite',
         'fornecedor_id': 3,
         'categoria_id': 1,
         'localizacao': 'Prateleira C3',
-        'saldo': 40
+        'saldo_id': 5
     }
     }
 # Dicionário de fornecedores 
@@ -212,28 +212,60 @@ def ex005(request):
     5: {
         'nome': 'Móveis'
     },
+    
 }
+    saldo = {
+    1: {
+  
+        'nome':'70'
+    },
+    2: {
+        'nome': '60'
+    },
+    3: {
+        'nome': '50'
+    },
+    4: {
+        'nome': '40'
+    },
+    5: {
+        'nome': '30'
+    },
+    }
 
     supermercado = {}
     for produto_id, produto_info in produtos.items():
         fornecedor_id = produto_info['fornecedor_id']
         categoria_id = produto_info['categoria_id']
-        
-        
-        print()
-        fornecedor_info = fornecedores.get(fornecedor_id, {})
-        categoria_info = categorias.get(categoria_id, {})
-        print("x"*40)
-        print(fornecedor_info)
-        print(categoria_info)
+        saldo_id = produto_info['saldo_id']
+
+        fornecedor_nome = fornecedores.get(fornecedor_id, {}).get ("nome", "desconhecido")
+        categoria_nome = categorias.get(categoria_id, {}).get ("nome", "desconhecido")
+        saldo_nome = saldo.get(saldo_id, {}).get ("nome", "desconhecido")
+
         supermercado[produto_id] = {
-            'nome': produto_info['nome'],
-            'fornecedor': fornecedor_info['nome'],
-            'categoria':  categoria_info['nome'],
+            'nome_produto': produto_info['nome'],
+            'nome_fornecedor': fornecedor_nome,
+            'nome_categoria': categoria_nome,
+            'nome_saldo': saldo_nome,
         }
 
-    print(supermercado)  
-    context = {
-        'supermercado': supermercado
-    }       
-    return render(request, 'angeline/ex005.html', context)
+    return render(request, 'angeline/ex005.html', {"supermercado":supermercado})
+        
+# print()
+# fornecedor_info = fornecedores.get(fornecedor_id, {})
+# categoria_info = categorias.get(categoria_id, {})
+# print("x"*40)
+# print(fornecedor_info)
+# print(categoria_info)
+# supermercado[produto_id] = {
+# 'nome': produto_info['nome'],
+# 'fornecedor': fornecedor_info['nome'],
+# 'categoria':  categoria_info['nome'],
+# }
+
+# print(supermercado)  
+# context = {
+#         'supermercado': supermercado
+#     }       
+   
