@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from angeline.forms import ContatoForm, Ex003Form
-
+from datetime import datetime
 
 def index(request):
     return render(request, 'angeline/index.html')
@@ -132,6 +132,10 @@ def ex004(request):
     for key, value in dictionary.items():
         print(f'{key}: {value}')'''
 
+def calc_vencimento(data):
+    delta = data - datetime.now()
+    return delta.days
+
 def ex005(request):
     produtos = {
     1: {
@@ -139,35 +143,49 @@ def ex005(request):
         'fornecedor_id': 1,
         'categoria_id': 1,
         'localizacao': 'Prateleira A1',
-        'saldo_id': 1
+        'saldo_id': 1,
+        'data_validade_id': datetime(2024,8,4),
+        'dias_vencidos_id': calc_vencimento(datetime(2024,8,4))
+
     },
     2: {
         'nome': 'Televisão',
         'fornecedor_id': 2,
         'categoria_id': 2,
         'localizacao': 'Setor Eletrônicos',
-        'saldo_id': 2
+        'saldo_id': 2,
+        'data_validade_id': datetime(2023,11,13),
+        'dias_vencidos_id': calc_vencimento(datetime(2023,11,13))
+        
+
+
     },
     3: {
         'nome': 'Macarrão',
         'fornecedor_id': 1,
         'categoria_id': 1,
         'localizacao': 'Prateleira B2',
-        'saldo_id': 3
+        'saldo_id': 3,
+        'data_validade_id': datetime(2023,9,15),
+        'dias_vencidos_id': calc_vencimento(datetime(2023,9,15))
     },
     4: {
         'nome': 'Smartphone',
         'fornecedor_id': 2,
         'categoria_id': 2,
         'localizacao': 'Setor Eletrônicos',
-        'saldo_id': 4
+        'saldo_id': 4,
+        'data_validade_id':  datetime(2023,10,3),
+        'dias_vencidos_id': calc_vencimento(datetime(2023,10,3))
     },
     5: {
         'nome': 'Leite',
         'fornecedor_id': 3,
         'categoria_id': 1,
         'localizacao': 'Prateleira C3',
-        'saldo_id': 5
+        'saldo_id': 5,
+        'data_validade_id': datetime(2023,11,10),
+        'dias_vencidos_id': calc_vencimento(datetime(2023,11,10))
     }
     }
 # Dicionário de fornecedores 
@@ -238,7 +256,8 @@ def ex005(request):
         fornecedor_id = produto_info['fornecedor_id']
         categoria_id = produto_info['categoria_id']
         saldo_id = produto_info['saldo_id']
-
+        vencimento_id = produto_info['dias_vencidos_id']
+        validade_id = produto_info['data_validade_id']
         fornecedor_nome = fornecedores.get(fornecedor_id, {}).get ("nome", "desconhecido")
         categoria_nome = categorias.get(categoria_id, {}).get ("nome", "desconhecido")
         saldo_nome = saldo.get(saldo_id, {}).get ("nome", "desconhecido")
@@ -248,6 +267,8 @@ def ex005(request):
             'nome_fornecedor': fornecedor_nome,
             'nome_categoria': categoria_nome,
             'nome_saldo': saldo_nome,
+            'nome_validade': validade_id,
+            'nome_vencimento': vencimento_id,
         }
 
     return render(request, 'angeline/ex005.html', {"supermercado":supermercado})
