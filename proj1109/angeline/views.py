@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from angeline.forms import ContatoForm, Ex003Form
 from datetime import datetime
+from .compras import *
 
 def index(request):
     return render(request, 'angeline/index.html')
@@ -273,20 +274,22 @@ def ex005(request):
 
     return render(request, 'angeline/ex005.html', {"supermercado":supermercado})
         
-# print()
-# fornecedor_info = fornecedores.get(fornecedor_id, {})
-# categoria_info = categorias.get(categoria_id, {})
-# print("x"*40)
-# print(fornecedor_info)
-# print(categoria_info)
-# supermercado[produto_id] = {
-# 'nome': produto_info['nome'],
-# 'fornecedor': fornecedor_info['nome'],
-# 'categoria':  categoria_info['nome'],
-# }
+def ex006(request):
+    
+    context = {
+        'nome': nome ,
+        'quantidade': quantidade
+    }
+    return render(request, 'angeline/ex006.html', context)
 
-# print(supermercado)  
-# context = {
-#         'supermercado': supermercado
-#     }       
-   
+from .compras import compras
+def ex006list(request):
+    context = {
+		'compras' : compras
+	}
+    return render(request, 'angeline/ex006list.html', context)
+
+def ex006delete(x):
+ 	if x in compras:
+         del compras[x]
+
