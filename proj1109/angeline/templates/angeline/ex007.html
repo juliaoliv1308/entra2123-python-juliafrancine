@@ -1,0 +1,48 @@
+{% extends "angeline/base.html" %}
+
+{% block content %}
+    <h2>Lista de Compras</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID Produto</th>
+                <th>Nome do Produto</th>
+                <th>Quantidade do Produto</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for id_produto, info in lista_de_compras.items %}
+                <tr>
+                    <td>{{ id_produto }}</td>
+                    <td>{{ info.nome }}</td>
+                    <td>{{ info.qnt }}</td>
+                    <td>
+                        <form method="post" action="{% url 'angeline:ex007_remove' id_produto %}">
+                            {% csrf_token %}
+                            <button type="submit">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Adicionar Produto</h1>
+    <form method="post" action="{% url 'angeline:ex007_add' %}">
+        {% csrf_token %}
+        <div>
+            {{ form.id_produto.label_tag }}
+            {{ form.id_produto }}
+        </div>
+        <div>
+            {{ form.nome_produto.label_tag }}
+            {{ form.nome_produto }}
+        </div>
+        <div>
+            {{ form.qnt_produto.label_tag }}
+            {{ form.qnt_produto }}
+        </div>
+        <button type="submit">Adicionar</button>
+    </form>
+{% endblock %}

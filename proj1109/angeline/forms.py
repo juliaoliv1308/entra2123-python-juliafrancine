@@ -19,3 +19,14 @@ class Ex003Form(forms.Form):
 
     pergunta = forms.CharField(disabled=True, label="Pergunta")
     resposta = forms.ChoiceField(choices=PERGUNTA_CHOICES, label="Resposta")
+
+
+class Ex007Form(forms.Form):
+    id_produto = forms.CharField(widget=forms.HiddenInput(), required=False)
+    nome_produto = forms.CharField()
+    qnt_produto = forms.CharField()
+
+# class Ex006listForm(forms.Form):
+#     id_produto = forms.CharField()
+#     nome = forms.CharField()
+#     quantidade = forms.CharField()

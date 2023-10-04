@@ -1,57 +1,12 @@
 compras = {
-    1: {
-        'id': 1,
-        'nome': 'Maçã',
-        'quantidade': 5
-    },
-    2: {
-        'id': 2,
-        'nome': 'Banana',
-        'quantidade': 3
-    },
-    3: {
-        'id': 3,
-        'nome': 'Leite',
-        'quantidade': 2
-    },
-    4: {
-        'id': 4,
-        'nome': 'Pão',
-        'quantidade': 2
-    },
-    5: {
-        'id': 5,
-        'nome': 'Arroz',
-        'quantidade': 1
-    },
-    6: {
-        'id': 6,
-        'nome': 'Feijão',
-        'quantidade': 1
-    },
-    7: {
-        'id': 7,
-        'nome': 'Carne',
-        'quantidade': 2
-    },
-    8: {
-        'id': 8,
-        'nome': 'Peixe',
-        'quantidade': 1
-    },
-    9: {
-        'id': 9,
-        'nome': 'Macarrão',
-        'quantidade': 3
-    },
-    10: {
-        'id': 10,
-        'nome': 'Óleo',
-        'quantidade': 1
-    }
+    1 : {'nome' : 'Pão', 'qnt' : '3'},
+    2 : {'nome' : 'Água', 'qnt' : '10'},
+    3 : {'nome' : 'Pipoca', 'qnt' : '0'},
+    4 : {'nome' : 'Leite', 'qnt' : '1 caixa'},
+    5 : {'nome' : 'Espinafre', 'qnt' : '1'},
+    6 : {'nome' : 'Abóbora', 'qnt' : '1'},
+    7 : {'nome' : 'Chocolate', 'qnt' : '2'},
+    8 : {'nome' : 'Sabão em pó', 'qnt' : '1'},
+    9 : {'nome' : 'Ração em sachê', 'qnt' : '7'},
+    10 : {'nome' : 'Vinho', 'qnt' : '5'},
 }
-
-# # Para acessar os dados de um item específico, você pode fazer o seguinte:
-# item_id = 3
-# print("Nome:", compras[item_id]['nome'])
-# print("Quantidade:", compras[item_id]['quantidade'])
