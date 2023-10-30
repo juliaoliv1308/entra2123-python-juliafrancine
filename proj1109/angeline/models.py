@@ -8,7 +8,7 @@ class Pessoa(models.Model):
     rg = models.CharField(max_length=11, blank=True, default="999")
     last_name = models.CharField(max_length=255, blank=True, default="")
     email = models.EmailField(blank=True, default="", null=True)
-    date_added = models.DateTimeField(auto_now=True)
+
 
     ESTADO_CIVIL_CHOICES = [
         ('CS', 'Casado'),
