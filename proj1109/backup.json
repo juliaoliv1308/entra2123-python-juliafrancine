@@ -534,63 +534,123 @@
                     }
           },
           {
-                    "model": "angeline.cidade",
+                    "model": "angeline.livro",
+                    "pk": 1,
+                    "fields": {
+                        "id": 1,
+                        "nome": "A quietude é a chave",
+                        "resumo": "Explora a importância do equilíbrio e da reflexão na vida moderna, destacando como a serenidade pode levar a uma vida mais significativa",
+                        "nota": 10,
+                        "sub_categoria": "desenvolvimento pessoal",
+                        "estoque": 1
+                    }
+                },
+                {
+                    "model": "angeline.livro",
                     "pk": 2,
                     "fields": {
-                              "nome": "Niterói",
-                              "estado": "Rio de Janeiro",
-                              "pais": "Brasil"
+                        "id": 2,
+                        "nome": "Ative sua mente",
+                        "resumo": "Revela estratégias para otimizar o potencial mental, estimular a criatividade e alcançar o sucesso pessoal",
+                        "nota": 3.8,
+                        "sub_categoria": "desenvolvimento pessoal",
+                        "estoque": 1
                     }
-          },
-          {
-                    "model": "angeline.cidade",
+                },
+                {
+                    "model": "angeline.livro",
                     "pk": 3,
                     "fields": {
-                              "nome": "Guaruja",
-                              "estado": "São Paulo",
-                              "pais": "Brasil"
+                        "id": 3,
+                        "nome": "Como fazer amigos",
+                        "resumo": "Oferece conselhos sobre construir relacionamentos autênticos, comunicar eficazmente e criar conexões significativas",
+                        "nota": 6.2,
+                        "sub_categoria": "",
+                        "estoque": 1
                     }
-          },
-          {
-                    "model": "angeline.cidade",
+                },
+                {
+                    "model": "angeline.livro",
                     "pk": 4,
                     "fields": {
-                              "nome": "Blumenau",
-                              "estado": "Santa Catarina",
-                              "pais": "Brasil"
+                        "id": 4,
+                        "nome": "Coragem de não agradar",
+                        "resumo": "Aborda o p, mostrando como superar expectativas alheias e encontrar a verdadeira felicidade",
+                        "nota": 9.1,
+                        "sub_categoria": "desenvolvimento pessoal",
+                        "estoque": 1
                     }
-          },
-          {
-                    "model": "angeline.pessoa",
-                    "pk": 2,
+                },
+                {
+                    "model": "angeline.livro",
+                    "pk": 5,
                     "fields": {
-                              "Nome": "Leandro",
-                              "Sobrenome": "Correa",
-                              "Data_nascimento": "1993-09-03",
-                              "endereco": "Rua Carlos Gomes, 456",
-                              "cidade": 2
+                        "id": 5,
+                        "nome": "Limite zero",
+                        "resumo": "Explora o poder da técnica Ho'oponopono, que visa liberar traumas e alcançar a paz interior e cura pessoal",
+                        "nota": 2.5,
+                        "sub_categoria": "",
+                        "estoque": 1
                     }
-          },
-          {
-                    "model": "angeline.pessoa",
-                    "pk": 3,
+                },
+                {
+                    "model": "angeline.livro",
+                    "pk": 6,
                     "fields": {
-                              "Nome": "Rosa",
-                              "Sobrenome": "Gonçalvez",
-                              "Data_nascimento": "1994-11-14",
-                              "endereco": "Rua Bento de Luz, 1057",
-                              "cidade": 3
+                        "id": 6,
+                        "nome": "Mindset",
+                        "resumo": "Aborda como a mentalidade pode moldar o sucesso. Destaca a importância da mentalidade de crescimento",
+                        "nota": 8.3,
+                        "sub_categoria": "desenvolvimento pessoal",
+                        "estoque": 1
                     }
-          },
-          {
-                    "model": "angeline.pessoa",
-                    "pk": 4,
+                },
+                {
+                    "model": "angeline.livro",
+                    "pk": 7,
                     "fields": {
-                              "Nome": "Limeira",
-                              "Sobrenome": "Muller",
-                              "Data_nascimento": "1954-07-24",
-                              "endereco": "Rua Badenfurt, 497",
-                              "cidade": 4
+                        "id": 7,
+                        "nome": "O ego e seu inimigo",
+                        "resumo": "Aborda a autorreflexão, sugerindo que o ego pode ser um obstáculo ao crescimento pessoal e à paz interior",
+                        "nota": 5.7,
+                        "sub_categoria": "",
+                        "estoque": 1
                     }
-          }
+                },
+                {
+                    "model": "angeline.livro",
+                    "pk": 8,
+                    "fields": {
+                        "id": 8,
+                        "nome": "O milagre da manhã",
+                        "resumo": "Incentiva a rotina matinal para aumentar a produtividade, melhorar a saúde e alcançar objetivos pessoais",
+                        "nota": 4.2,
+                        "sub_categoria": "",
+                        "estoque": 1
+                    }
+                },
+                {
+                    "model": "angeline.livro",
+                    "pk": 9,
+                    "fields": {
+                        "id": 9,
+                        "nome": "O poder do hábito",
+                        "resumo": "Explora como os hábitos influenciam vidas e organizações, com insights sobre como mudá-los para o sucesso",
+                        "nota": 7.9,
+                        "sub_categoria": "desenvolvimento pessoal",
+                        "estoque": 1
+                    }
+                },
+                {
+                    "model": "angeline.livro",
+                    "pk": 10,
+                    "fields": {
+                        "id": 10,
+                        "nome": "Procrastinação",
+                        "resumo": "Explora as causas da procrastinação e oferece estratégias para superá-la e alcançar maior produtividade e realização",
+                        "nota": 1.6,
+                        "sub_categoria": "",
+                        "estoque": 1
+                    }
+                }            
 ]
